@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#dce8f5">
+  <title>Budget Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="app-header glass-panel">
+      <div class="brand-mark" aria-hidden="true">₱</div>
+      <div>
+        <p class="eyebrow">PERSONAL FINANCE</p>
+        <h1>BUDGET TRACKER</h1>
+        <p class="subtitle">A clearer view of your cutoff budget.</p>
+      </div>
+    </header>
+
+    <section class="budget-card glass-panel" aria-label="Cutoff budget">
+      <div class="section-heading">
+        <span class="section-icon" aria-hidden="true">↗</span>
+        <div>
+          <p class="eyebrow">YOUR CUTOFF</p>
+          <h2>Budget overview</h2>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="budget">Enter amount of budget for the whole cutoff</label>
+        <div class="currency-input">
+          <span aria-hidden="true">₱</span>
+          <input id="budget" type="number" min="0" step="0.01" placeholder="Enter total budget" value="0">
+        </div>
+      </div>
+
+      <div class="remaining-card">
+        <div>
+          <p class="eyebrow">AVAILABLE TO SPEND</p>
+          <div class="remaining-label">Remaining budget</div>
+        </div>
+        <strong id="remainingTop">₱0.00</strong>
+      </div>
+    </section>
+
+    <section class="expenses-card glass-panel" aria-label="Expenses">
+      <div class="section-heading expenses-heading">
+        <span class="section-icon" aria-hidden="true">≋</span>
+        <div>
+          <p class="eyebrow">YOUR SPENDING</p>
+          <h2>Expenses</h2>
+        </div>
+      </div>
+
+      <div class="column-labels" aria-hidden="true">
+        <span>EXPENSE NAME</span>
+        <span>AMOUNT</span>
+        <span></span>
+      </div>
+      <div class="option-list" id="options"></div>
+
+      <button class="add-button" id="addOption" type="button">
+        <span class="plus" aria-hidden="true">+</span>
+        Add another expense
+      </button>
+    </section>
+
+    <section class="summary-card glass-panel" aria-label="Budget summary">
+      <div class="section-heading">
+        <span class="section-icon" aria-hidden="true">⌁</span>
+        <div>
+          <p class="eyebrow">CUTOFF SUMMARY</p>
+          <h2>Totals</h2>
+        </div>
+      </div>
+      <div class="total-row">
+        <span>Total amount of expenses</span>
+        <strong id="totalExpenses">₱0.00</strong>
+      </div>
+      <div class="total-row balance-row" id="balanceRow">
+        <span>Total balance of budget</span>
+        <strong id="totalBalance">₱0.00</strong>
+      </div>
+      <p class="save-note"><span class="save-dot"></span> Your changes are saved automatically on this device.</p>
+    </section>
+
+    <footer>Simple budgeting, one cutoff at a time.</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
